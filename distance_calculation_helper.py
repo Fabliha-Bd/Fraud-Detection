@@ -130,14 +130,14 @@ def mysql_rides_to_dataframe(query):
     
     query: string 
     """
-    host = "shohoz-analytics.mysql.database.azure.com"
+    host = "hostname"
     port= 3306
-    dbname= "live_foods"
-    user="ds.team@shohoz-analytics"
-    password="eh*U2c8-rd@B9Qq^#"
+    dbname= "db name"
+    user="user name"
+    password="password"
     conn = pymysql.connect(host, user=user,port=port,password=password, db=dbname)
     cursor = conn.cursor()
-    q = "use live_foods"
+    q = "use database_name"
     cursor.execute(q)
     cursor.close()
     df = pd.read_sql(query,conn)
